@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.shape.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="640.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.evan.wordle.WordleController">
+    <children>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="Game">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#resetGame" text="Restart" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#askRules" text="Rules" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="608.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Rectangle fx:id="rec0x2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="288.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec0x1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="208.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec0x0" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="128.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec0x3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="368.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec0x4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="448.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec1x4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="448.0" layoutY="101.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec1x3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="368.0" layoutY="101.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec1x0" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="128.0" layoutY="101.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec1x1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="208.0" layoutY="101.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec1x2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="288.0" layoutY="101.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec3x2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="288.0" layoutY="262.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec3x1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="208.0" layoutY="262.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec3x0" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="128.0" layoutY="262.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec3x3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="368.0" layoutY="262.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec3x4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="448.0" layoutY="262.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec2x4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="448.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec2x3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="368.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec2x0" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="128.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec2x1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="208.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec2x2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="288.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec5x2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="288.0" layoutY="423.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec5x1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="208.0" layoutY="423.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec5x0" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="128.0" layoutY="423.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec5x3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="368.0" layoutY="423.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec5x4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="448.0" layoutY="423.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec4x4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="448.0" layoutY="343.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec4x3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="368.0" layoutY="343.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec4x0" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="128.0" layoutY="343.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec4x1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="208.0" layoutY="343.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <Rectangle fx:id="rec4x2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="65.0" layoutX="288.0" layoutY="343.0" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+                <TextField fx:id="wordIn" alignment="CENTER" layoutX="208.0" layoutY="510.0" onAction="#checkWord" prefHeight="36.0" prefWidth="220.0" promptText="Enter word here">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </TextField>
+            <Button layoutX="456.0" layoutY="520.0" mnemonicParsing="false" onAction="#checkWord" text="Submit" />
+            <Text fx:id="letter0x0" layoutX="128.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="invalidText" layoutX="235.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="170.13671875">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter0x1" layoutX="208.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter0x2" layoutX="288.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter0x3" layoutX="368.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter0x4" layoutX="448.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter1x0" layoutX="128.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter1x1" layoutX="208.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter2x1" layoutX="208.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter3x1" layoutX="208.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter4x1" layoutX="208.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter5x1" layoutX="208.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter2x0" layoutX="128.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter3x0" layoutX="128.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter4x0" layoutX="128.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter5x0" layoutX="128.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter1x2" layoutX="288.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter2x2" layoutX="288.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter3x2" layoutX="288.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter4x2" layoutX="288.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter5x2" layoutX="288.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter1x3" layoutX="368.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter2x3" layoutX="368.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter3x3" layoutX="368.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter4x3" layoutX="368.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter5x3" layoutX="368.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter1x4" layoutX="448.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter2x4" layoutX="448.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter3x4" layoutX="448.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter4x4" layoutX="451.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="letter5x4" layoutX="448.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            </children>
+        </AnchorPane>
+    </children>
+    <stylesheets>
+        <URL value="@Wordle.css" />
+    </stylesheets>
+</VBox>
