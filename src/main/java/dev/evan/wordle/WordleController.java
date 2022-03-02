@@ -15,10 +15,12 @@ import javafx.scene.control.ButtonType;
 import java.util.Optional;
 
 import java.util.concurrent.ThreadLocalRandom;
-import java.io.File;
 import java.util.Scanner;
 import java.util.HashMap;
-import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class WordleController {
 
@@ -212,7 +214,7 @@ public class WordleController {
     void resetGame(ActionEvent event) {
         gameState = 0;
         guessNum = 0;
-        word = pickWord("src/main/resources/wordle-answers-alphabetical.txt");
+        word = pickWord("/wordle-answers-alphabetical.txt");
         answerIndex = word.toCharArray();
         invalidText.setText(" ");
         resetColor();
@@ -260,13 +262,13 @@ public class WordleController {
     Color green = Color.rgb(106, 170, 100);
     Color gray = Color.rgb(120, 124, 126);
     char[] wordIndex;
-    String word = pickWord("src/main/resources/wordle-answers-alphabetical.txt");
+    String word = pickWord("/wordle-answers-alphabetical.txt");
     char[] answerIndex = word.toCharArray();
     //0 is gray, 1 is yellow, 2 is green
     Integer[] rowColor = new Integer[]{0, 0, 0, 0, 0};
     String guess;
-    HashMap<String, Integer> word_guesses = textfile_to_hashmap("src/main/resources/wordle-allowed-guesses.txt");
-    HashMap<String, Integer> word_answers = textfile_to_hashmap("src/main/resources/wordle-answers-alphabetical.txt");
+    HashMap<String, Integer> word_guesses = textfile_to_hashmap("/wordle-allowed-guesses.txt");
+    HashMap<String, Integer> word_answers = textfile_to_hashmap("/wordle-answers-alphabetical.txt");
     HashMap<Integer, Color> colorAssign = assignColors();
     HashMap<Character, Integer> guessMap;
     HashMap<Character, Integer> answerMap;
@@ -525,17 +527,18 @@ public class WordleController {
     HashMap<String, Integer> textfile_to_hashmap(String filepath) {
         HashMap<String, Integer> hash_map = new HashMap<String, Integer>();
         try {
-            File files = new File(filepath);
+            InputStream inputStream = getClass().getResourceAsStream(filepath);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
             int c = 0;
-            Scanner scanner = new Scanner(files);
-            while (scanner.hasNextLine()) {
-                String l = scanner.nextLine();
+            String line = reader.readLine();
+            while (line != null) {
+                line = reader.readLine();
                 c++;
-                hash_map.put(l, c);
+                hash_map.put(line, c);
             }
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("error, please insert the valid files");
+            reader.close();
+        } catch (IOException e) {
+            System.out.println("error, please insert the valid path / text files for textfile_to_hashmap");
         }
         return hash_map;
     }
@@ -544,20 +547,22 @@ public class WordleController {
         String chosen = "";
         int randomNum = ThreadLocalRandom.current().nextInt(1, 2316);
         try {
-            File files = new File(filepath);
+            InputStream inputStream = getClass().getResourceAsStream(filepath);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
             int c = 0;
-            Scanner scanner = new Scanner(files);
-            while (scanner.hasNextLine()) {
-                String l = scanner.nextLine();
+
+            String line = reader.readLine();
+            while (line != null) {
+                line = reader.readLine();
                 c++;
                 if (randomNum == c) {
-                    chosen = l;
+                    chosen = line;
                     break;
                 }
             }
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("error, please insert the valid files");
+            reader.close();
+        } catch (IOException e) {
+            System.out.println("error, please insert the valid path / text files for pickWord");
         }
         return chosen;
     }
