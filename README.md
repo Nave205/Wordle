@@ -21,7 +21,7 @@ My plans:
 * ~~Create as executable file~~
 (Might as well just do a batch file. Java deployment technologies were removed at 11. Should've coded in java 8 instead to still use JavaFX, plus the ease of deployment. In any case, the user needs to have the correct java installed)
 * Send to friends for fun
-* Create a seperate repository to suggest words (Information Theory)
+* Create a separate repository to suggest words (Information Theory)
 
 ![current_ui](https://github.com/Nave205/Wordle/blob/master/WordleImage.png?raw=true)
 
